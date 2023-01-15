@@ -21,7 +21,7 @@ class KtorTranslateClient(
 ) : TranslateClient {
 
     override suspend fun translate(
-        textToTranslate: String,
+        fromText: String,
         fromLanguage: Language,
         toLanguage: Language
     ): String {
@@ -31,7 +31,7 @@ class KtorTranslateClient(
                 contentType(ContentType.Application.Json)
                 setBody(
                     TranslateRequest(
-                        textToTranslate = textToTranslate,
+                        textToTranslate = fromText,
                         sourceLanguageCode = fromLanguage.langCode,
                         targetLanguageCode = toLanguage.langCode
                     )

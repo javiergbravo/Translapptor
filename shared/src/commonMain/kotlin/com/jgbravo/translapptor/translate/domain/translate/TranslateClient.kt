@@ -5,7 +5,7 @@ import com.jgbravo.translapptor.core.domain.language.Language
 interface TranslateClient {
 
     suspend fun translate(
-        textToTranslate: String,
+        fromText: String,
         fromLanguage: Language,
         toLanguage: Language
     ): String
