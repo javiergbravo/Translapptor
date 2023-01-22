@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.jgbravo.translapptor.android.core.router.TranslapptorNavigator
+import com.jgbravo.translapptor.android.core.navigation.TranslapptorNavigator
 import com.jgbravo.translapptor.android.core.theme.TranslapptorTheme
 import dagger.hilt.android.AndroidEntryPoint
 

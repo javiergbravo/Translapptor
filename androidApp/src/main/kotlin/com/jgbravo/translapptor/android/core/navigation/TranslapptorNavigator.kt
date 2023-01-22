@@ -1,14 +1,14 @@
-package com.jgbravo.translapptor.android.core.router
+package com.jgbravo.translapptor.android.core.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
-import com.jgbravo.translapptor.android.core.router.Destination.TranslateDestination
-import com.jgbravo.translapptor.android.core.router.Destination.VoiceToTextDestination
-import com.jgbravo.translapptor.android.core.router.components.DestinationNavHost
-import com.jgbravo.translapptor.android.core.router.components.destinationComposable
+import com.jgbravo.translapptor.android.core.navigation.Destination.TranslateDestination
+import com.jgbravo.translapptor.android.core.navigation.Destination.VoiceToTextDestination
+import com.jgbravo.translapptor.android.core.navigation.components.DestinationNavHost
+import com.jgbravo.translapptor.android.core.navigation.components.destinationComposable
 import com.jgbravo.translapptor.android.translate.presentation.AndroidTranslateViewModel
 import com.jgbravo.translapptor.android.translate.presentation.TranslateScreen
 import com.jgbravo.translapptor.android.voiceSpeech.presentation.VoiceSpeechScreen

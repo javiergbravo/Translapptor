@@ -1,4 +1,4 @@
-package com.jgbravo.translapptor.android.core.router
+package com.jgbravo.translapptor.android.core.navigation
 
 sealed class Destination(protected val route: String, vararg params: String) {
 

@@ -1,4 +1,4 @@
-package com.jgbravo.translapptor.android.core.router.components
+package com.jgbravo.translapptor.android.core.navigation.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,7 +9,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.jgbravo.translapptor.android.core.router.Destination
+import com.jgbravo.translapptor.android.core.navigation.Destination
 
 @Composable
 fun DestinationNavHost(
