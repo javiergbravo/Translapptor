@@ -35,7 +35,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideDatabaseDriver(
-        @ApplicationContext context: Context // Check if need Application instead of Context
+        @ApplicationContext context: Context
     ): SqlDriver {
         return DatabaseDriverFactory(context = context).create()
     }
