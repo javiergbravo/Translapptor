@@ -32,7 +32,7 @@ fun TranslateHistoryItem(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .shadow(
                 elevation = 5.dp,
                 shape = RoundedCornerShape(20.dp)

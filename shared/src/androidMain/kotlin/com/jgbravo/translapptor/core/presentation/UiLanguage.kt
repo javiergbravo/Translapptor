@@ -40,7 +40,6 @@ actual class UiLanguage(
             Language.TURKISH -> Locale("tr", "TR")
             Language.UKRAINIAN -> Locale("uk", "UA")
             Language.SPANISH -> Locale("es", "ES")
-            else -> null
         }
     }
 

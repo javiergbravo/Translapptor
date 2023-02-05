@@ -42,7 +42,7 @@ object Deps {
     const val kotlinVersion = "1.7.21"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
-    private const val gradleVersion = "7.4.0"
+    private const val gradleVersion = "7.3.0"
     const val androidBuildTools = "com.android.tools.build:gradle:$gradleVersion"
 
     private const val sqlDelightGradleVersion = "1.5.3"
