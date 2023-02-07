@@ -1,4 +1,4 @@
-package com.jgbravo.translapptor.core.presentation
+package com.jgbravo.translapptor.core.presentation.theme
 
 object Colors {
     const val AccentViolet = 0xFF5643C9

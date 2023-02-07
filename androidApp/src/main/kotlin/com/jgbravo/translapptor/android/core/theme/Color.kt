@@ -3,7 +3,7 @@ package com.jgbravo.translapptor.android.core.theme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
-import com.jgbravo.translapptor.core.presentation.Colors
+import com.jgbravo.translapptor.core.presentation.theme.Colors
 
 val AccentViolet = Color(Colors.AccentViolet)
 val DarkGrey = Color(Colors.DarkGrey)
