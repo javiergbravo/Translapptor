@@ -11,7 +11,7 @@ import com.jgbravo.translapptor.android.core.navigation.components.DestinationNa
 import com.jgbravo.translapptor.android.core.navigation.components.destinationComposable
 import com.jgbravo.translapptor.android.translate.presentation.AndroidTranslateViewModel
 import com.jgbravo.translapptor.android.translate.presentation.TranslateScreen
-import com.jgbravo.translapptor.android.voiceSpeech.presentation.VoiceSpeechScreen
+import com.jgbravo.translapptor.android.voice_to_text.presentation.VoiceSpeechScreen
 import com.jgbravo.translapptor.core.domain.language.Language.ENGLISH
 import com.jgbravo.translapptor.translate.presentation.TranslateEvent.RecordAudio
 
