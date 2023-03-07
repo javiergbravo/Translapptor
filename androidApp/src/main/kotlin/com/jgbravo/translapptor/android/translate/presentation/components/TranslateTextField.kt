@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -36,6 +37,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jgbravo.translapptor.R.drawable
@@ -184,7 +186,8 @@ private fun IdleTranslateTextField(
             modifier = Modifier
                 .fillMaxSize()
                 .onFocusChanged { isFocused = it.isFocused },
-            textStyle = TextStyle(color = MaterialTheme.colors.onSurface)
+            textStyle = TextStyle(color = MaterialTheme.colors.onSurface),
+            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences)
         )
         if (fromText.isEmpty() && !isFocused) {
             Text(

@@ -19,6 +19,7 @@ sealed class Destination(protected val route: String, vararg params: String) {
     object VoiceToTextDestination : Destination("voice_to_text", "languageCode") {
 
         const val LANGUAGE_CODE = "languageCode"
+        const val VOICE_RESULT = "voiceResult"
 
         operator fun invoke(languageCode: String): String {
             return fullRoute.replace("{$LANGUAGE_CODE}", languageCode)

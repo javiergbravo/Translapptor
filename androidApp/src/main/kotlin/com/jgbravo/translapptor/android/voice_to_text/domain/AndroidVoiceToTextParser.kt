@@ -7,6 +7,7 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import com.jgbravo.translapptor.android.R.string
+import com.jgbravo.translapptor.android.core.utils.capitalizeText
 import com.jgbravo.translapptor.core.util.CommonStateFlow
 import com.jgbravo.translapptor.core.util.toCommonStateFlow
 import com.jgbravo.translapptor.voice_to_text.domain.VoiceToTextParser
@@ -96,10 +97,22 @@ class AndroidVoiceToTextParser @Inject constructor(
     }
 
     override fun onError(error: Int) {
-        _state.update {
-            it.copy(
-                error = "Error: $error"
-            )
+        when (error) {
+            SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> {
+                _state.update {
+                    it.copy(
+                        error = "Can't record without permission"
+                    )
+                }
+            }
+            SpeechRecognizer.ERROR_CLIENT -> return
+            else -> {
+                _state.update {
+                    it.copy(
+                        error = "Error: $error"
+                    )
+                }
+            }
         }
     }
 
@@ -107,7 +120,7 @@ class AndroidVoiceToTextParser @Inject constructor(
         results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)?.getOrNull(0)?.let { text ->
             _state.update {
                 it.copy(
-                    result = text
+                    result = text.capitalizeText()
                 )
             }
         }

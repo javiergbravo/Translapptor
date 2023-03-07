@@ -10,11 +10,17 @@
     <string name="copied_to_clipboard">Copied to clipboard</string>
     <string name="history">History</string>
 
+    <!-- Error messages -->
     <string name="error_service_unavailable">Oops, an error happened. Please try again later.</string>
     <string name="error_client">Oops, an error happened. Please contact the support.</string>
     <string name="error_server">An error happened. Please try again later.</string>
     <string name="error_unknown">Oops, an unknown error happened.</string>
-    <string name="record_audio">Record audio</string>
-
     <string name="error_speech_recognition_unavavailable">Speech recognition is not available</string>
+
+    <string name="record_audio">Record audio</string>
+    <string name="stop_recording">Stop recording</string>
+    <string name="apply">Apply</string>
+    <string name="record_again">Record again</string>
+    <string name="listening">Listening…</string>
+    <string name="click_and_start_talking">Click record and start talking</string>
 </resources>
