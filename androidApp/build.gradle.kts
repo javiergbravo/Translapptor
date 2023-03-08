@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -17,6 +15,8 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "com.jgbravo.translapptor.TestHiltRunner"
     }
     buildFeatures {
         compose = true
@@ -58,6 +58,7 @@ dependencies {
     androidTestImplementation(Deps.testRunner)
     androidTestImplementation(Deps.jUnit)
     androidTestImplementation(Deps.composeTesting)
+    androidTestImplementation(Deps.rules)
     debugImplementation(Deps.composeTestManifest)
 
     kaptAndroidTest(Deps.hiltAndroidCompiler)
