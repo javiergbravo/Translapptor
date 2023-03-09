@@ -20,5 +20,5 @@ jobs:
       - name: Build App with Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 7.3.0
+          gradle-version: '7.3.0'
           arguments: build
