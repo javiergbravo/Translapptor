@@ -2,6 +2,7 @@ package com.jgbravo.translapptor.core.util
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
@@ -22,6 +23,7 @@ actual open class CommonFlow<T> actual constructor(
         return DisposableHandle { job.cancel() }
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     fun subscribe(onCollect: (T) -> Unit) = subscribe(
         coroutineScope = GlobalScope,
         dispatcher = Dispatchers.Main,
