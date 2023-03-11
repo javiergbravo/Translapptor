@@ -25,6 +25,6 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build app with Gradle
-          run: |
-            ./gradlew wrapper --gradle-version=8.0-rc-1
-            ./gradlew build --stacktrace --no-daemon
+        run: |
+          ./gradlew wrapper --gradle-version=8.0-rc-1
+          ./gradlew build --stacktrace --no-daemon
