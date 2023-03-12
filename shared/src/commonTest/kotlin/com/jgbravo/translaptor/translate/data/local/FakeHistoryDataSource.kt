@@ -14,7 +14,7 @@ class FakeHistoryDataSource : HistoryDataSource {
         return _data.toCommonFlow()
     }
 
-    override suspend fun insertHistoryItem(historyItem: HistoryItem) {
-        _data.value += historyItem
+    override suspend fun insertHistoryItem(item: HistoryItem) {
+        _data.value += item
     }
 }

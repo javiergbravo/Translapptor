@@ -24,5 +24,8 @@ jobs:
       - name: Make gradle executable
         run: chmod +x ./gradlew
 
-      - name: Build with gradle
-        run: ./gradlew build --stacktrace --no-daemon
+      - name: Set up gradle version
+        run: ./gradlew wrapper --gradle-version=8.0-rc-1
+
+      - name: Build app with Gradle
+        run: ./gradlew :shared:build --stacktrace --no-daemon
