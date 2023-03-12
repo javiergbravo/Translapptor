@@ -18,6 +18,9 @@ object Deps {
     private const val coilComposeVersion = "2.1.0"
     const val coilCompose = "io.coil-kt:coil-compose:$coilComposeVersion"
 
+    private const val appcompat_version = "1.6.1"
+    const val appcompat = "androidx.appcompat:appcompat:$appcompat_version"
+
     // KOTLIN DATE TIME
     private const val dateTimeVersion = "0.4.0"
     const val kotlinDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion"
@@ -66,6 +69,9 @@ object Deps {
 
     private const val jUnitVersion = "4.13.2"
     const val jUnit = "junit:junit:$jUnitVersion"
+
+    private const val robolectricVersion = "4.7.3"
+    const val robolectric = "org.robolectric:robolectric:$robolectricVersion"
 
     private const val testRunnerVersion = "1.5.1"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"

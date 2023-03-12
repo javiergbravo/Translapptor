@@ -1,4 +1,4 @@
-package com.jgbravo.translapptor.translate.data.remote
+package fakes.translate.data.remote
 
 import com.jgbravo.translapptor.core.domain.language.Language
 import com.jgbravo.translapptor.translate.domain.translate.TranslateClient

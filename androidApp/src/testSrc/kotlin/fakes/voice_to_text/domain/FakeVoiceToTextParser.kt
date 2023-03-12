@@ -1,7 +1,9 @@
-package com.jgbravo.translapptor.voice_to_text.domain
+package fakes.voice_to_text.domain
 
 import com.jgbravo.translapptor.core.util.CommonStateFlow
 import com.jgbravo.translapptor.core.util.toCommonStateFlow
+import com.jgbravo.translapptor.voice_to_text.domain.VoiceToTextParser
+import com.jgbravo.translapptor.voice_to_text.domain.VoiceToTextParserState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 

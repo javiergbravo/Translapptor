@@ -1,7 +1,7 @@
 package com.jgbravo.translapptor.android
 
-import android.app.Application
+import com.jgbravo.translapptor.android.core.BaseApplication
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class TranslapptorApp : Application()
+class TranslapptorApp : BaseApplication()
