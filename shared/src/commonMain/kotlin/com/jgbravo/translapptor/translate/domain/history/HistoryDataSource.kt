@@ -7,5 +7,5 @@ interface HistoryDataSource {
 
     fun getHistory(): CommonFlow<List<HistoryItem>>
 
-    suspend fun insertHistoryItem(historyItem: HistoryItem)
+    suspend fun insertHistoryItem(item: HistoryItem)
 }
