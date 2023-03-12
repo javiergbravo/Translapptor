@@ -29,3 +29,24 @@ jobs:
 
       - name: Build app with Gradle
         run: ./gradlew :shared:build --stacktrace --no-daemon
+
+  unit-tests:
+    name: 🧪 Run Tests
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Make gradle executable
+        run: chmod +x ./gradlew
+
+      - name: Set up gradle version
+        run: ./gradlew wrapper --gradle-version=8.0-rc-1
+
+      - name: Execute unit tests
+        run: ./gradlew test
+
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }}
