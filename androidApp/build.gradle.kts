@@ -83,7 +83,6 @@ dependencies {
     androidTestImplementation(Deps.composeTesting)
     androidTestImplementation(Deps.rules)
 
-//    debugImplementation(Deps.appcompat)
     debugImplementation(Deps.composeTestManifest)
 
     kaptAndroidTest(Deps.hiltAndroidCompiler)

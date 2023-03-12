@@ -18,9 +18,6 @@ object Deps {
     private const val coilComposeVersion = "2.1.0"
     const val coilCompose = "io.coil-kt:coil-compose:$coilComposeVersion"
 
-    private const val appcompat_version = "1.6.1"
-    const val appcompat = "androidx.appcompat:appcompat:$appcompat_version"
-
     // KOTLIN DATE TIME
     private const val dateTimeVersion = "0.4.0"
     const val kotlinDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion"
