@@ -34,6 +34,20 @@ android {
             isMinifyEnabled = false
         }
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            isReturnDefaultValues = true
+        }
+    }
+    sourceSets {
+        getByName("test") {
+            java.srcDir("src/testSrc/kotlin")
+        }
+        getByName("androidTest") {
+            java.srcDir("src/testSrc/kotlin")
+        }
+    }
 }
 
 dependencies {
@@ -55,10 +69,20 @@ dependencies {
 
     implementation(Deps.ktorAndroid)
 
+    testImplementation(Deps.testRunner)
+    testImplementation(Deps.jUnit)
+    testImplementation(Deps.robolectric)
+    testImplementation(Deps.composeTesting)
+    testImplementation(Deps.rules)
+
+    testImplementation(Deps.hiltTesting)
+    kaptTest(Deps.hiltAndroidCompiler)
+
     androidTestImplementation(Deps.testRunner)
     androidTestImplementation(Deps.jUnit)
     androidTestImplementation(Deps.composeTesting)
     androidTestImplementation(Deps.rules)
+
     debugImplementation(Deps.composeTestManifest)
 
     kaptAndroidTest(Deps.hiltAndroidCompiler)

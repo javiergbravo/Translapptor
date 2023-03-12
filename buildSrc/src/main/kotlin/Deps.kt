@@ -67,6 +67,9 @@ object Deps {
     private const val jUnitVersion = "4.13.2"
     const val jUnit = "junit:junit:$jUnitVersion"
 
+    private const val robolectricVersion = "4.7.3"
+    const val robolectric = "org.robolectric:robolectric:$robolectricVersion"
+
     private const val testRunnerVersion = "1.5.1"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"
 

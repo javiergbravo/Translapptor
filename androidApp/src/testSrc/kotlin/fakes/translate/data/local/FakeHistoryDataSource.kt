@@ -1,4 +1,4 @@
-package com.jgbravo.translapptor.translate.data.local
+package fakes.translate.data.local
 
 import com.jgbravo.translapptor.core.util.CommonFlow
 import com.jgbravo.translapptor.core.util.toCommonFlow
