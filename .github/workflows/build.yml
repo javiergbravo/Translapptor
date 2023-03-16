@@ -36,13 +36,13 @@ jobs:
     steps:
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Make gradle executable
         run: chmod +x ./gradlew
 
       - name: Set up gradle version
-        run: ./gradlew wrapper --gradle-version=8.0-rc-1
+        run: ./gradlew wrapper --gradle-version=8.0.2
 
       - name: Execute unit tests
         run: ./gradlew test
