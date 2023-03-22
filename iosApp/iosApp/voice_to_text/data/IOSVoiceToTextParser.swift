@@ -42,8 +42,7 @@ class IOSVoiceToTextParser : VoiceToTextParser, ObservableObject {
         updateState(error: nil)
         
         let chosenLocale = Locale.init(identifier: languageCode)
-        let supportedLocale = SFSpeechRecognizer.supportedLocales().contains(chosenLocale) ? chosenLocale : Locale.init(identifier: "en-US")
-        self.recognizer = SFSpeechRecognizer(locale: supportedLocale)
+        self.recognizer = SFSpeechRecognizer(locale: chosenLocale)
         
         guard recognizer?.isAvailable == true else {
             updateState(error: "Speech recognizer is not available")
