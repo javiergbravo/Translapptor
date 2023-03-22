@@ -12,8 +12,8 @@ import Speech
 import Combine
 
 class MicrophonePowerObserver: ObservableObject {
-    private var cancellable: AnyCancellable?
-    private var audioRecorder: AVAudioRecorder?
+    private var cancellable: AnyCancellable? = nil
+    private var audioRecorder: AVAudioRecorder? = nil
     
     @Published private(set) var micPowerRatio = 0.0
     
@@ -44,12 +44,12 @@ class MicrophonePowerObserver: ObservableObject {
                 if powerOffset < -50 {
                     self?.micPowerRatio = 0.0
                 } else {
-                    let normalizedOffset = CGFloat(50 + powerOffset)
+                    let normalizedOffset = CGFloat(50 + powerOffset) / 50
                     self?.micPowerRatio = normalizedOffset
                 }
             }
         } catch {
-            print("An error ocurred when observing microphone power: \(error.localizedDescription)")
+            print("An error occurred when observing microphone power: \(error.localizedDescription)")
         }
     }
     

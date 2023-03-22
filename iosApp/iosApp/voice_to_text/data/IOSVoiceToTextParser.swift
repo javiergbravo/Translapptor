@@ -11,7 +11,7 @@ import shared
 import Speech
 import Combine
 
-class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
+class IOSVoiceToTextParser : VoiceToTextParser, ObservableObject {
     
     private let _state = IOSMutableStateFlow(
         initialValue: VoiceToTextParserState(result: "", error: nil, powerRatio: 0.0, isSpeaking: false)
@@ -30,7 +30,7 @@ class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
     private var audioSession: AVAudioSession?
     
     func cancel() {
-        // Not needed in iOS
+        // Not needed on iOS
     }
     
     func reset() {
@@ -52,7 +52,7 @@ class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
         
         audioSession = AVAudioSession.sharedInstance()
         
-        self.requestPermission { [weak self] in
+        self.requestPermissions { [weak self] in
             self?.audioBufferRequest = SFSpeechAudioBufferRecognitionRequest()
             
             guard let audioBufferRequest = self?.audioBufferRequest else {
@@ -91,7 +91,7 @@ class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
                 self?.updateState(isSpeaking: true)
                 
                 self?.micPowerCancellable = self?.micPowerRatio.sink { [weak self] ratio in
-                    self?.updateState(poweRatio: ratio)
+                    self?.updateState(powerRatio: ratio)
                 }
             } catch {
                 self?.updateState(error: error.localizedDescription, isSpeaking: false)
@@ -109,7 +109,6 @@ class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
         audioBufferRequest = nil
         
         audioEngine?.stop()
-        audioEngine = nil
         
         inputNode?.removeTap(onBus: 0)
         
@@ -120,20 +119,20 @@ class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
     private func updateState(
         result: String? = nil,
         error: String? = nil,
-        poweRatio: CGFloat? = nil,
+        powerRatio: CGFloat? = nil,
         isSpeaking: Bool? = nil
     ) {
         let currentState = _state.value
         _state.value = VoiceToTextParserState(
             result: result ?? currentState?.result ?? "",
             error: error ?? currentState?.error,
-            powerRatio: Float(poweRatio ?? CGFloat(currentState?.powerRatio ?? 0.0)),
+            powerRatio: Float(powerRatio ?? CGFloat(currentState?.powerRatio ?? 0.0)),
             isSpeaking: isSpeaking ?? currentState?.isSpeaking ?? false
         )
     }
     
     
-    private func requestPermission(onGranted: @escaping () -> Void) {
+    private func requestPermissions(onGranted: @escaping () -> Void) {
         audioSession?.requestRecordPermission { [weak self] wasGranted in
             if !wasGranted {
                 self?.updateState(error: "You need to grant permission to record your voice.")
@@ -141,7 +140,7 @@ class IOSVoiceToTextParse : VoiceToTextParser, ObservableObject {
                 return
             }
             SFSpeechRecognizer.requestAuthorization { [weak self] status in
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
                     if status != .authorized {
                         self?.updateState(error: "You need to grant permission to transcribe audio.")
                         self?.stopListening()
