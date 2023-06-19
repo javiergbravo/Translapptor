@@ -51,7 +51,7 @@ object Deps {
     const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
 
     // SQLDELIGHT
-    private const val sqlDelightVersion = "1.5.4"
+    private const val sqlDelightVersion = "1.5.5"
     const val sqlDelightRuntime = "com.squareup.sqldelight:runtime:$sqlDelightVersion"
     const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:$sqlDelightVersion"
     const val sqlDelightNativeDriver = "com.squareup.sqldelight:native-driver:$sqlDelightVersion"
