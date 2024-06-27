@@ -78,6 +78,6 @@ object Deps {
 
     const val hiltTesting = "com.google.dagger:hilt-android-testing:$hiltVersion"
 
-    private const val rulesVersion = "1.4.0"
+    private const val rulesVersion = "1.6.1"
     const val rules = "androidx.test:rules:$rulesVersion"
 }
