@@ -70,7 +70,7 @@ object Deps {
     private const val robolectricVersion = "4.7.3"
     const val robolectric = "org.robolectric:robolectric:$robolectricVersion"
 
-    private const val testRunnerVersion = "1.5.1"
+    private const val testRunnerVersion = "1.6.2"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"
 
     const val composeTesting = "androidx.compose.ui:ui-test-junit4:$composeVersion"
