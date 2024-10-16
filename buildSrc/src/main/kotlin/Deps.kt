@@ -1,7 +1,7 @@
 object Deps {
 
     // COMPOSE
-    private const val activityComposeVersion = "1.6.1"
+    private const val activityComposeVersion = "1.9.3"
     const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
 
     const val composeVersion = "1.4.0-alpha02"
